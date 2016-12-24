@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery events</title>
+</head>
+<body>
+<h3>Selector In jQuery</h3><hr>
+<a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp">jQuery selectors</a> from <mark>learn.jquery.com</mark>
+<div id="id_div1" class="class_div1">For Class and Id</div>
+<h1 class="class_h1">Heading 1 32px</h1>
+<h6>Heading 6 10px</h6>
+<p>First Paragraph</p>
+<p>Second Paragraph</p>
+<p>Third Paragraph</p>
+<div>First div </div>
+<div>Second div </div>
+<span>First span</span>
+<span>Second span</span>
+
+<div>
+	<p>Only one child of a div</p>
+</div>
+
+<div>
+	<span>Only one span</span>
+	<p>Only one P</p>
+</div>
+
+<ul>
+	<li>List 1</li>
+	<li>List 2</li>
+	<li class="not_selector">List 3</li>
+	<li>List 4</li>
+	<li>List 5</li>
+</ul>
+<input type="button" name="btnButton" value="* (all element)">
+<input type="reset" name="btnReset" value="Reset">
+<input type="text" name="inpTxt">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+// $("*").click(function(){	alert("all Elements (*)");}); 
+// $("#id_div1").click(function(){ alert("Div Clicked by id selector"); });
+// $(".class_div1").click(function(){ alert("Div Clicked by class selector")});
+// $(".class_h1, #id_div1").click(function(){ alert("all element with Class or ID") });
+//$("li").click(function(){ alert("One lic clicked");});
+// $("li, h1, p").click(function(){ alert("All li, h1, p");});
+// $("p:first").click(function(){ alert("First p tag");});
+// $("p:last").click(function(){ alert("last p tag");});
+// $("p:odd").click(function(){ alert("Odd p tag (Starting from 0)");});
+// $("li:odd, p:even").click(function(){ alert("odd li & Even p (Starting from 0)");});
+
+// $("li:first-child").click(function(){ alert("all li element first-child of their parent");});
+// $(":first-child").click(function(){ alert("all element first-child of their parent");});
+// $("span:first-of-type").click(function(){ alert("first-child span of every parent");});
+// try for last
+
+// $("li:nth-child(2)").css("color","red");//only 2nd
+// $("li:nth-child(-n+3)").css("color","red");//first 3
+// $("li:nth-child(n+3)").css("color","red");//leave first 2 affect from 3
+// $("li:nth-last-child(2)").css("color","red");//only last second
+// $("li:nth-last-child(n+2)").css("color","red");//leave the first one from last
+// $("li:nth-last-child(-n+3)").css("color","red");//only last3
+// $("div:nth-of-type(3)").css("color","red");// every 3rd div of parent
+// $("li:nth-last-of-type(2)").css("color","red");//2nd last
+// $("li:nth-last-of-type(n+3)").css("color","red"); //all except last 2
+
+// $("p:only-child").css("color","red");//if only one child
+// $("p:only-of-type").css("color", "blue");//only one child(targeted-p)
+
+// $("div > p").css("color", "blue");//direct chils
+// $("body > h1").css("color", "blue");
+// $("div + p").css("color", "blue");
+
+// $("div + span").css("color", "blue"); //select span next to div
+// $("div ~ span").css("color", "blue"); //select span sibling to div
+
+// $("ul li:eq(2)").css("color","red");//3rd element in list(index start with 0)
+// $("ul li:gt(1)").css("color","red");//greater then 1 (index start with 0)
+// $("ul li:lt(3)").css("color","red");//less then 3 (index start with 0)
+// $("ul li:not('.not_selector')").css("color","red");//except the selector
+
+// $(":header").css({"color":"red"})//all header (h1 to h6)
+// $(":header").css({"color":"red","background-color":"yellow"})//more then one property
+// $("p:contains(ir)").css("color","red");//paragraph contains ir
+// $("div:has(span)").css("color","red");//every div who contain span
+//:empty, :parent, :hidden, :visibity, :root, :lang
+
+// $("[href]").css("color","red");//select all attribute name href
+		//id, clss, type, value, name etc. all attributr
+// $("[type='button']").css("color","red");//all having the given value
+// $("[type!='button']").css("color","red");//except specified value
+// $("[name^='btn']").css("color","red");// starting with value(btn)
+// $("[type$='set']").css("color","red");//end with value(set)
+// $("[name*='tn']").css("color","red");//	containing the word(tn)
+
+$(":input").css("background-color","pink");//all input
+
+</script>
+</body>
+</html>
