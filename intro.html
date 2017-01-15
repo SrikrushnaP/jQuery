@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction To jQuery</title>
+	<style type="text/css">
+		#myDiv, #myDiv1{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+		.middle, .middle1{
+			border: 3px solid green;
+		}
+	</style>
+</head>
+<body>
+<span>I have nothing more to say...</span>
+<div id="foo">FOO! </div>
+<div id="myDiv" class="middle">My text</div>
+<div id="myDiv1" class="middle1">My text</div>
+<a href="demo.com" id="logoa"></a>
+<table>
+	<tr>
+		<td>XXX XXX XXX</td>
+	</tr>
+</table>
+<button id="btngo">jQuery Test Button</button>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btngo").click(function(){
+			// var x = $("[id$='goa']").attr('id');
+			// alert(x);
+			// $('#logo').animate({width: "200px", height: "200px"}, 3000);
+			$("div").css("background-color","yellow").filter(".middle").css("border-color","red");
+		});
+	});
+	var foo = function(value){
+		console.log("foo:"+ value);
+	}
+	var bar = function(value){
+		console.log("bar:"+ value);
+	}
+	var callbacks = $.Callbacks();
+	callbacks.add(foo);
+	callbacks.fire("hello");
+	callbacks.add(bar);
+	callbacks.fire("world");
+
+	$("span").appendTo("#foo");
+	// $("span").prependTo("#foo");
+
+	$("td").hover({
+		$(this).addClass("hover");
+	}, function(){$(this).removeClass("hover")});
+	$("td").off("mouseenter mouseleave");
+
+</script>
+</body>
+</html>

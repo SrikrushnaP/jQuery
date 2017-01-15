@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery events</title>
+</head>
+<body>
+<h3>All Events in jQuery</h3><hr>
+
+<b>Mouse - click, dblclick, mouseenter, mouseleave</b><br><br>
+<button id="click">click</button>
+<button id="dblclick">dblclick</button>
+<button id="mouseenter">mouseenter</button>
+<button id="mouseleave">mouseleave</button><br><br>
+
+<b>Keyboard - keypress, keydown, keyup</b><br><br>
+<input type="text" name="txtInp"><br><br>
+
+
+<b>Form - submit, change, focus, blur</b><br><br>
+
+
+<b>Document/Window - load, unload, resize, scroll</b><br><br>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	$("#click").click(function(){
+		alert("click event performed");
+	});
+
+	$("#dblclick").dblclick(function(){
+		alert("dblclick event performed");
+	});
+
+	$("#mouseenter").mouseenter(function(){
+		alert("mouseenter event performed");
+	});
+
+	$("#mouseleave").mouseleave(function(){
+		alert("mouseleave event performed");
+	});
+
+
+// Keyboard - keypress, keydown, keyup
+
+	$("[name=txtInp]").keypress(function(){
+		alert("keypress event performed");
+	});
+
+	$("[name=txtInp]").keydown(function(){
+		alert("keydown event performed");
+	});
+
+	$("[name=txtInp]").keyup(function(){
+		alert("keyup event performed");
+	});
+
+</script>
+</body>
+</html>

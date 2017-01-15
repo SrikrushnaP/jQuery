@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction To jQuery</title>
+</head>
+<body>
+<input type="text" name="txtName" id="txtName">
+
+<p id="txtPara">shjfsj</p>
+<button id="jqc">jQuery Input Empty Chk</button>
+<button id="jsec">JS Empty Chk</button>
+<button id="jqeec">jQuery Element Empty Chk</button>
+<button id="oneClick">Only first click</button>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- load jQuery file from local when CDN fails -->
+<script type="text/javascript">
+	if (typeof $ == 'undefined'){
+		alert("Here jQuery Load from local...");
+	  document.write(unescape("%3Cscript type='text/javascript' src='js/jquery.min.js' %3E%3C/script%3E"));
+	  // document.write(unescape("%3Cscript type='text/javascript' src='myTestScript.js' %3E%3C/script%3E"));
+	}
+</script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("#jqc").click(function(){
+			if ($('#txtName').val()==""){
+			    alert('Empty');
+			  }else{
+			  	alert('Not-Empty');
+			  }
+		});
+
+		$("#jsec").click(function(){
+			if($.trim($('#txtPara').html())=='')
+		      alert('Empty');
+		  	else
+			  alert('Not-Empty');
+		});
+
+		$("#jqeec").click(function(){
+			// var len = $('input').size();
+			var len = $('input').length;
+			if ( len > 0)
+			    alert(len+ ' input Element exists');
+			else
+			  	alert('Element not exists');
+		});
+
+
+
+		$("#oneClick").one("click", function() {
+        alert("This will be displayed only once.");
+    });
+		 
+	});
+</script>
+</body>
+</html>
